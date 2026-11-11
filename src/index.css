@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --color-agri-green: #1a5d1a;
+  --color-wheat: #f2c14e;
+  --color-soil: #5d4037;
+}
+
+:root {
+  --bg-color: #f0f9ff;
+  --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 50%, #fffbeb 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #10b981;
+  --border-color: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --bg-color: #020617;
+  --bg-gradient: linear-gradient(135deg, #020617 0%, #064e3b 50%, #1e1b4b 100%);
+  --card-bg: rgba(15, 23, 42, 0.95);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #34d399;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+.warm {
+  --bg-color: #fffbeb;
+  --bg-gradient: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #ffedd5 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-primary: #451a03;
+  --text-secondary: #92400e;
+  --accent-color: #f59e0b;
+  --border-color: rgba(146, 64, 14, 0.15);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.02em;
+  font-weight: 450;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
